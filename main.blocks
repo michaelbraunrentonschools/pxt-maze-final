@@ -1,0 +1,119 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="Lbdw*{j7weirN%e+tIsl">mySprite</variable><variable id="sTAj51{SE.SAo4.EP!ac">donut</variable><variable id=";p3^`s;Z*#[b1HU=0=Pd">sprite</variable><variable id="P^(|ErCx/W@e6$/2K`w!">otherSprite</variable><variable type="SpriteKindLegacy" id="]31%m8%u]Do3ODm[};-K">0Player</variable><variable type="SpriteKindLegacy" id="JMX:G8*7,w*N7O)_f/L`">1Food</variable><variable type="SpriteKindLegacy" id="ic`bRszo-pc}N~I7VKzL">2Enemy</variable><variable type="SpriteKindLegacy" id="sq*uX%#wYfirxo/:#m)g">3Projectile</variable></variables><block type="spritesoverlap" x="0" y="0"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritetype"><field name="MEMBER">0Player</field></shadow></value><value name="HANDLER_DRAG_PARAM_otherSprite"><shadow type="argument_reporter_custom"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></shadow></value><value name="otherKind"><shadow type="spritetype"><field name="MEMBER">1Food</field></shadow></value><statement name="HANDLER"><block type="mixer_play_sound"><field name="sound">music.baDing</field><next><block type="hudChangeScoreBy"><value name="value"><shadow type="math_number"><field name="NUM">1</field></shadow></value><next><block type="spritesetpos"><value name="sprite"><block type="argument_reporter_custom"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></block></value><value name="x"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">512</field></shadow></value></block></value><value name="y"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">512</field></shadow></value></block></value><next><block type="gamecountdown"><value name="duration"><shadow type="math_number"><field name="NUM">5</field></shadow></value></block></next></block></next></block></next></block></statement></block><block type="pxt-on-start" x="48" y="240"><statement name="HANDLER"><block type="gamesettilemap"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="map"><shadow type="tilemap_image_picker"><field name="img">img`
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 c 7 7 7 7 7 7 7 c 7 7 7 7 7 7 7 7 7 c 7 7 7 7 7 7 7 7 4 
+4 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 c c c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 8 8 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 8 8 8 8 8 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 8 8 8 8 7 7 7 7 7 7 7 7 7 c 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 8 8 7 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 
+4 7 7 7 7 7 7 7 7 7 7 c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 c c 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 
+4 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+`</field></shadow></value><next><block type="gamesettile"><value name="index"><shadow type="colorindexpicker"><field name="index">4</field></shadow></value><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+4 4 4 4 4 4 4 4 4 4 4 e e e e e 
+4 4 e 4 4 4 4 4 4 4 4 e 4 4 4 e 
+4 4 e 4 4 4 4 4 4 4 4 e 4 4 4 e 
+4 4 4 4 e e 4 4 4 4 4 e e 4 4 e 
+4 4 4 4 4 4 4 e e 4 4 4 e 4 4 e 
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 e 
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 e 
+4 4 4 4 4 e 4 4 4 4 4 4 4 4 4 4 
+4 4 4 4 4 e e e 4 4 4 4 4 4 4 e 
+4 4 4 e 4 4 4 4 4 4 4 4 4 4 4 e 
+4 4 4 4 4 4 4 4 4 4 4 4 e 4 4 4 
+4 4 4 4 4 4 4 e e 4 4 4 e 4 4 4 
+e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+e 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+e e e e e e e 4 4 4 4 4 4 4 4 4 
+`</field></shadow></value><value name="wall"><shadow type="toggleOnOff"><field name="on">true</field></shadow></value><next><block type="gamesettile"><value name="index"><shadow type="colorindexpicker"><field name="index">7</field></shadow></value><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 5 5 7 7 7 7 7 7 7 5 7 7 
+7 7 7 7 5 5 7 7 7 7 7 7 7 5 7 7 
+7 7 7 5 5 5 7 7 7 7 7 7 7 5 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 5 5 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 5 5 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 5 5 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 5 5 7 7 7 7 7 7 7 7 5 5 7 7 
+7 7 5 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`</field></shadow></value><value name="wall"><shadow type="toggleOnOff"><field name="on">false</field></shadow></value><next><block type="gamesettile"><value name="index"><shadow type="colorindexpicker"><field name="index">8</field></shadow></value><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+8 8 8 8 8 8 8 8 8 6 8 8 8 8 8 8 
+8 8 8 8 8 6 8 8 6 6 6 6 6 8 8 8 
+6 6 6 8 8 8 8 8 8 8 8 6 6 8 8 8 
+6 6 6 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 6 8 8 8 8 8 8 8 6 6 8 8 8 8 
+8 8 8 8 8 8 8 8 6 8 6 6 6 8 8 8 
+8 8 8 6 6 8 8 6 8 8 6 6 8 6 8 8 
+8 8 8 6 8 8 8 6 8 8 8 6 6 8 8 8 
+8 8 8 6 8 8 8 6 8 8 8 8 8 8 6 8 
+8 8 8 6 6 6 6 6 6 6 8 6 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 6 8 8 8 8 8 8 8 8 8 8 8 
+8 8 8 8 8 8 8 8 8 8 8 8 8 6 8 8 
+8 8 8 8 8 6 6 6 6 6 6 6 6 8 8 8 
+8 8 8 8 6 8 8 8 8 8 8 8 8 8 8 8 
+`</field></shadow></value><value name="wall"><shadow type="toggleOnOff"><field name="on">true</field></shadow></value><next><block type="variables_set"><field name="VAR" id="Lbdw*{j7weirN%e+tIsl">mySprite</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . f f 4 4 f f . . . . . 
+. . . . f 5 4 5 5 4 5 f . . . . 
+. . . f e 4 5 5 5 5 4 e f . . . 
+. . f b 3 e 4 4 4 4 e 3 b f . . 
+. . f 3 3 3 3 3 3 3 3 3 3 f . . 
+. f 3 3 e b 3 e e 3 b e 3 3 f . 
+. f 3 3 f f e e e e f f 3 3 f . 
+. f b b f b f e e f b f b b f . 
+. f b b e 1 f 4 4 f 1 e b b f . 
+f f b b f 4 4 4 4 4 4 f b b f f 
+f b b f f f e e e e f f f b b f 
+. f e e f b d d d d b f e e f . 
+. . e 4 c d d d d d d c 4 e . . 
+. . e f b d b d b d b b f e . . 
+. . . f f 1 d 1 d 1 d f f . . . 
+. . . . . f f b b f f . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritetype"><field name="MEMBER">0Player</field></shadow></value></block></value><next><block type="game_control_sprite"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get"><field name="VAR" id="Lbdw*{j7weirN%e+tIsl">mySprite</field></block></value><next><block type="camerafollow"><value name="sprite"><block type="variables_get"><field name="VAR" id="Lbdw*{j7weirN%e+tIsl">mySprite</field></block></value><next><block type="controls_repeat_ext"><value name="TIMES"><shadow type="math_whole_number"><field name="NUM">20</field></shadow></value><statement name="DO"><block type="variables_set"><field name="VAR" id="sTAj51{SE.SAo4.EP!ac">donut</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . c c c b b b b b . . . . 
+. . c c b 4 4 4 4 4 4 b b b . . 
+. c c 4 4 4 4 4 5 4 4 4 4 b c . 
+. e 4 4 4 4 4 4 4 4 4 5 4 4 e . 
+e b 4 5 4 4 5 4 4 4 4 4 4 4 b c 
+e b 4 4 4 4 4 4 4 4 4 4 5 4 4 e 
+e b b 4 4 4 4 4 4 4 4 4 4 4 b e 
+. e b 4 4 4 4 4 5 4 4 4 4 b e . 
+8 7 e e b 4 4 4 4 4 4 b e e 6 8 
+8 7 2 e e e e e e e e e e 2 7 8 
+e 6 6 2 2 2 2 2 2 2 2 2 2 6 c e 
+e c 6 7 6 6 7 7 7 6 6 7 6 c c e 
+e b e 8 8 c c 8 8 c c c 8 e b e 
+e e b e c c e e e e e c e b e e 
+. e e b b 4 4 4 4 4 4 4 4 e e . 
+. . . c c c c c e e e e e . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritetype"><field name="MEMBER">1Food</field></shadow></value></block></value><next><block type="spritesetpos"><value name="sprite"><block type="variables_get"><field name="VAR" id="sTAj51{SE.SAo4.EP!ac">donut</field></block></value><value name="x"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">512</field></shadow></value></block></value><value name="y"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_random"><value name="min"><shadow type="math_number"><field name="NUM">0</field></shadow></value><value name="limit"><shadow type="math_number"><field name="NUM">512</field></shadow></value></block></value></block></next></block></statement><next><block type="gamecountdown"><value name="duration"><shadow type="math_number"><field name="NUM">5</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></xml>
